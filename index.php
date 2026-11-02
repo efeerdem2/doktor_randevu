@@ -8,22 +8,27 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="uygulama.css">
+    <script src="tema.js" defer></script>
     <style>
         body, html {
-            height: 100%;
+            min-height: 100%;
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        .right-bg {
-            background: linear-gradient(rgba(13, 110, 253, 0.75), rgba(13, 110, 253, 0.85)), url('https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=1200&q=80') no-repeat center center;
-            background-size: cover;
+        body {
+            min-height: 100vh;
+        }
+        .right-bg > * {
+            position: relative;
+            z-index: 1;
         }
     </style>
 </head>
 <body>
 
-<div class="container-fluid h-100">
-    <div class="row h-100">
+<div class="container-fluid min-vh-100">
+    <div class="row min-vh-100">
         
         <!-- SOL TARAF: Form Alanı -->
         <div class="col-lg-5 d-flex flex-column justify-content-between p-5 bg-white">
@@ -34,7 +39,7 @@
                         <i class="bi bi-hospital-fill"></i>
                     </div>
                     <h3 class="fw-bold text-dark">Doktor Randevu Sistemi</h3>
-                    <p class="text-muted small">Randevu, Tahlil ve Sağlık Kayıtlarınız tek ekranda.</p>
+                    <p class="text-muted small">Randevu ve sağlık bilgileriniz tek ekranda.</p>
                 </div>
 
                 <!-- Giriş / Kayıt Sekme Butonları -->
@@ -62,17 +67,10 @@
                                 <label for="giris_sifre"><i class="bi bi-lock me-2"></i>Şifre</label>
                             </div>
                             <div class="d-flex justify-content-between align-items-center mb-4">
-                                <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" id="beniHatirla">
-                                    <label class="form-check-label small text-muted" for="beniHatirla">Beni Hatırla</label>
-                                </div>
-                                <a href="#" class="small text-decoration-none">Şifremi Unuttum?</a>
+                                <span class="small text-muted" title="Şifre yenileme için sistem yöneticinize başvurun.">Şifre yenileme için yöneticinize başvurun.</span>
                             </div>
                             <button type="submit" class="btn btn-primary w-100 py-3 fw-bold rounded-3 shadow-sm">Giriş Yap</button>
                         </form>
-                        <div class="text-center mt-3">
-                            <small class="text-muted">E-Devlet ile giriş yapmak için <a href="#" class="text-danger text-decoration-none fw-semibold">tıklayın</a>.</small>
-                        </div>
                     </div>
 
                     <!-- KAYIT OL FORMU -->
@@ -111,8 +109,8 @@
         <div class="col-lg-7 right-bg d-none d-lg-flex flex-column justify-content-between text-white p-5">
             <div></div> <!-- Üst boşluk -->
             <div>
-                <h1 class="display-5 fw-bold mb-3">Sağlığınız İçin<br>Dijital Çözümler</h1>
-                <p class="lead text-light mb-5 w-75">Hastanelerde beklemeden, doktor randevularınızı yönetin, tahlil sonuçlarınızı görüntüleyin ve sağlık verilerinizi güvenle takip edin.</p>
+                <h1 class="display-5 fw-bold mb-3">Sağlık yolculuğunuz<br>daha kolay başlasın.</h1>
+                <p class="lead text-light mb-5 w-75">Randevularınızı tek bir yerden planlayın, doktorunuzla ilgili bilgileri takip edin ve ihtiyaç duyduğunuzda doğru polikliniğe ulaşın.</p>
                 
                 <div class="row g-4">
                     <div class="col-md-6">
@@ -126,10 +124,10 @@
                     </div>
                     <div class="col-md-6">
                         <div class="d-flex align-items-center bg-white bg-opacity-10 p-3 rounded-3">
-                            <div class="fs-2 me-3 text-info"><i class="bi bi-file-earmark-medical"></i></div>
+                            <div class="fs-2 me-3 text-info"><i class="bi bi-calendar2-week"></i></div>
                             <div>
-                                <h6 class="mb-0 fw-bold">Anında Sonuçlar</h6>
-                                <small class="text-light">Tahlil raporları cebinizde</small>
+                                <h6 class="mb-0 fw-bold">Düzenli Takip</h6>
+                                <small class="text-light">Randevularınız tek ekranda</small>
                             </div>
                         </div>
                     </div>

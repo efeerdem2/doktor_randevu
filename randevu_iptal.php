@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'baglanti.php';
+require_once 'bagl  anti.php';
 
 if (isset($_SESSION['user_id']) && $_SESSION['rol'] == 'hasta' && isset($_GET['id'])) {
     $randevu_id = $_GET['id'];

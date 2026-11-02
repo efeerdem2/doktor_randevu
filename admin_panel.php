@@ -72,16 +72,18 @@ $tum_randevular = $db->query("SELECT r.*, h.ad_soyad as hasta_adi, d.unvan, dk.a
     <title>Yönetim Paneli - Doktor Randevu Sistemi</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="uygulama.css">
+    <script src="tema.js" defer></script>
 </head>
 <body class="bg-light">
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <nav class="navbar navbar-expand-lg shadow-sm">
         <div class="container">
             <a class="navbar-brand fw-bold" href="admin_panel.php"><i class="bi bi-shield-lock-fill me-2"></i>Yönetim Paneli (Admin)</a>
             <div class="d-flex align-items-center">
-                <span class="text-white me-3"><i class="bi bi-person-circle me-1"></i> <?php echo htmlspecialchars($_SESSION['ad_soyad']); ?></span>
-                <a href="cikis.php" class="btn btn-outline-light btn-sm">Çıkış Yap</a>
+                <span class="me-3"><i class="bi bi-person-circle me-1"></i> <?php echo htmlspecialchars($_SESSION['ad_soyad']); ?></span>
+                <a href="cikis.php" class="btn btn-outline-secondary btn-sm">Çıkış Yap</a>
             </div>
         </div>
     </nav>
