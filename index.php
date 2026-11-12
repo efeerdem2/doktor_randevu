@@ -67,7 +67,7 @@
                                 <label for="giris_sifre"><i class="bi bi-lock me-2"></i>Şifre</label>
                             </div>
                             <div class="d-flex justify-content-between align-items-center mb-4">
-                                <span class="small text-muted" title="Şifre yenileme için sistem yöneticinize başvurun.">Şifre yenileme için yöneticinize başvurun.</span>
+                                <span class="small text-muted" title="Yöneticiniz size yeni bir geçici şifre oluşturabilir.">Şifre yenileme için sistem yöneticinize başvurun.</span>
                             </div>
                             <button type="submit" class="btn btn-primary w-100 py-3 fw-bold rounded-3 shadow-sm">Giriş Yap</button>
                         </form>

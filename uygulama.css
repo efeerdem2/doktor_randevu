@@ -48,9 +48,15 @@ a {
 }
 
 .navbar {
+    position: relative;
+    z-index: 1030;
     background: rgba(255, 255, 255, 0.96) !important;
     border-bottom: 1px solid var(--app-line) !important;
     backdrop-filter: blur(12px);
+}
+
+.navbar .dropdown-menu {
+    z-index: 1031;
 }
 
 .navbar-brand,
@@ -273,6 +279,247 @@ a {
     border-radius: 1.5rem;
 }
 
+.doctor-welcome {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 8% 100%, rgba(110, 169, 147, 0.23), transparent 34%),
+        radial-gradient(circle at 90% 0%, rgba(210, 138, 85, 0.24), transparent 29%),
+        linear-gradient(120deg, #fff 0%, #eaf3ee 100%);
+    border: 1px solid #d9e5dd;
+    border-radius: 1.5rem;
+    box-shadow: 0 18px 42px rgba(32, 50, 56, 0.08);
+}
+
+.doctor-welcome::after {
+    position: absolute;
+    top: -4rem;
+    right: 28%;
+    width: 13rem;
+    height: 13rem;
+    border: 1px solid rgba(23, 107, 104, 0.09);
+    border-radius: 50%;
+    box-shadow: 0 0 0 1.5rem rgba(23, 107, 104, 0.025), 0 0 0 3rem rgba(23, 107, 104, 0.02);
+    content: "";
+    pointer-events: none;
+}
+
+.doctor-welcome > .row {
+    position: relative;
+    z-index: 1;
+}
+
+.welcome-kicker {
+    color: var(--app-primary);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+}
+
+.doctor-profile-card {
+    border: 1px solid rgba(23, 107, 104, 0.16);
+    border-radius: 1.15rem;
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 12px 28px rgba(32, 50, 56, 0.08);
+}
+
+.doctor-profile-card > .d-flex {
+    padding-bottom: 0.85rem;
+    border-bottom: 1px solid var(--app-line);
+}
+
+.doctor-avatar,
+.summary-icon {
+    display: inline-flex;
+    flex: 0 0 auto;
+    width: 2.8rem;
+    height: 2.8rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.95rem;
+    color: var(--app-primary);
+    background: rgba(23, 107, 104, 0.1);
+    font-size: 1.3rem;
+}
+
+.doctor-profile-detail {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    min-width: 0;
+    padding: 0.55rem 0.7rem;
+    border: 1px solid rgba(23, 107, 104, 0.08);
+    border-radius: 0.7rem;
+    color: var(--app-muted);
+    font-size: 0.9rem;
+    background: rgba(23, 107, 104, 0.035);
+}
+
+.doctor-profile-detail + .doctor-profile-detail {
+    margin-top: 0.65rem;
+}
+
+.doctor-profile-detail .bi {
+    color: var(--app-primary);
+}
+
+.summary-card {
+    position: relative;
+    display: flex;
+    min-height: 10.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+    border: 1px solid var(--app-line);
+    border-radius: 1.15rem;
+    background: linear-gradient(145deg, #fff 0%, #f8faf8 100%);
+    box-shadow: 0 10px 26px rgba(32, 50, 56, 0.065);
+    transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.summary-card::after {
+    position: absolute;
+    top: -2.6rem;
+    right: -2rem;
+    width: 7rem;
+    height: 7rem;
+    border: 1px solid rgba(23, 107, 104, 0.08);
+    border-radius: 50%;
+    box-shadow: 0 0 0 1rem rgba(23, 107, 104, 0.025);
+    content: "";
+    pointer-events: none;
+}
+
+.summary-card:hover {
+    box-shadow: 0 16px 32px rgba(32, 50, 56, 0.1);
+    transform: translateY(-2px);
+}
+
+.summary-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.summary-card .summary-icon {
+    width: 2.45rem;
+    height: 2.45rem;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+}
+
+.summary-card--active .summary-icon {
+    color: #527b65;
+    background: #eaf3ed;
+}
+
+.summary-card--total {
+    border-top: 3px solid var(--app-primary);
+}
+
+.summary-card--active {
+    border-top: 3px solid #6f9c7d;
+}
+
+.summary-card--completed {
+    border-top: 3px solid #7396a9;
+}
+
+.summary-card--cancelled {
+    border-top: 3px solid #c17a6e;
+}
+
+.summary-card--completed .summary-icon {
+    color: #4b7085;
+    background: #eaf1f5;
+}
+
+.summary-card--cancelled .summary-icon {
+    color: #a45e53;
+    background: #f8ece9;
+}
+
+.summary-value {
+    font-size: 1.8rem;
+    font-weight: 750;
+    line-height: 1;
+}
+
+.summary-label {
+    margin-top: 0.45rem;
+    color: var(--app-muted);
+    font-size: 0.85rem;
+}
+
+.doctor-appointments {
+    min-width: 900px;
+}
+
+.doctor-appointments th,
+.doctor-appointments td {
+    padding: 1rem 1.15rem;
+}
+
+.appointment-complaint,
+.appointment-note {
+    max-width: 15rem;
+    min-width: 10rem;
+    white-space: normal;
+}
+
+.empty-state-icon {
+    color: var(--app-muted);
+    font-size: 2rem;
+}
+
+.admin-stat-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--app-line);
+    border-top: 3px solid var(--app-primary);
+    border-radius: 1.15rem;
+    background: linear-gradient(145deg, #fff 0%, #f8faf8 100%);
+    box-shadow: 0 10px 26px rgba(32, 50, 56, 0.06);
+}
+
+.admin-stat-card--doctors {
+    border-top-color: #6f9c7d;
+}
+
+.admin-stat-card--appointments {
+    border-top-color: #7396a9;
+}
+
+.admin-stat-card--clinics {
+    border-top-color: #c17a6e;
+}
+
+.admin-stat-icon {
+    display: inline-flex;
+    width: 2.45rem;
+    height: 2.45rem;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.8rem;
+    border-radius: 0.85rem;
+    color: var(--app-primary);
+    background: rgba(23, 107, 104, 0.1);
+    font-size: 1.15rem;
+}
+
+.admin-stat-value {
+    font-size: 1.8rem;
+    font-weight: 750;
+    line-height: 1;
+}
+
+.admin-stat-label {
+    margin-top: 0.45rem;
+    color: var(--app-muted);
+    font-size: 0.85rem;
+}
+
 #randevular {
     scroll-margin-top: 1.5rem;
 }
@@ -366,6 +613,50 @@ a {
     border-color: var(--app-line);
 }
 
+:root[data-theme="dark"] .doctor-welcome {
+    background:
+        radial-gradient(circle at 8% 100%, rgba(110, 169, 147, 0.1), transparent 30%),
+        radial-gradient(circle at 90% 0%, rgba(210, 138, 85, 0.1), transparent 25%),
+        linear-gradient(120deg, #202e2b 0%, #253a34 100%);
+    border-color: var(--app-line);
+}
+
+:root[data-theme="dark"] .doctor-profile-card,
+:root[data-theme="dark"] .summary-card {
+    background: #202e2b;
+    border-color: var(--app-line);
+}
+
+:root[data-theme="dark"] .doctor-profile-detail {
+    border-color: var(--app-line);
+    background: rgba(118, 198, 179, 0.06);
+}
+
+:root[data-theme="dark"] .admin-stat-card {
+    background: #202e2b;
+    border-color: var(--app-line);
+    border-top-color: var(--app-primary);
+}
+
+:root[data-theme="dark"] .admin-stat-icon {
+    color: var(--app-primary);
+    background: rgba(118, 198, 179, 0.13);
+}
+
+:root[data-theme="dark"] .summary-card--total,
+:root[data-theme="dark"] .summary-card--active,
+:root[data-theme="dark"] .summary-card--completed,
+:root[data-theme="dark"] .summary-card--cancelled {
+    border-top-color: var(--app-primary);
+}
+
+:root[data-theme="dark"] .summary-card--active .summary-icon,
+:root[data-theme="dark"] .summary-card--completed .summary-icon,
+:root[data-theme="dark"] .summary-card--cancelled .summary-icon {
+    color: var(--app-primary);
+    background: rgba(118, 198, 179, 0.13);
+}
+
 :root[data-theme="dark"] .feature-card--clinic {
     background: #263a33;
     border-color: #354c42;
@@ -456,6 +747,50 @@ a {
         border-color: var(--app-line);
     }
 
+    :root:not([data-theme="light"]) .doctor-welcome {
+        background:
+            radial-gradient(circle at 8% 100%, rgba(110, 169, 147, 0.1), transparent 30%),
+            radial-gradient(circle at 90% 0%, rgba(210, 138, 85, 0.1), transparent 25%),
+            linear-gradient(120deg, #202e2b 0%, #253a34 100%);
+        border-color: var(--app-line);
+    }
+
+    :root:not([data-theme="light"]) .doctor-profile-card,
+    :root:not([data-theme="light"]) .summary-card {
+        background: #202e2b;
+        border-color: var(--app-line);
+    }
+
+    :root:not([data-theme="light"]) .doctor-profile-detail {
+        border-color: var(--app-line);
+        background: rgba(118, 198, 179, 0.06);
+    }
+
+    :root:not([data-theme="light"]) .admin-stat-card {
+        background: #202e2b;
+        border-color: var(--app-line);
+        border-top-color: var(--app-primary);
+    }
+
+    :root:not([data-theme="light"]) .admin-stat-icon {
+        color: var(--app-primary);
+        background: rgba(118, 198, 179, 0.13);
+    }
+
+    :root:not([data-theme="light"]) .summary-card--total,
+    :root:not([data-theme="light"]) .summary-card--active,
+    :root:not([data-theme="light"]) .summary-card--completed,
+    :root:not([data-theme="light"]) .summary-card--cancelled {
+        border-top-color: var(--app-primary);
+    }
+
+    :root:not([data-theme="light"]) .summary-card--active .summary-icon,
+    :root:not([data-theme="light"]) .summary-card--completed .summary-icon,
+    :root:not([data-theme="light"]) .summary-card--cancelled .summary-icon {
+        color: var(--app-primary);
+        background: rgba(118, 198, 179, 0.13);
+    }
+
     :root:not([data-theme="light"]) .feature-card--clinic {
         background: #263a33;
         border-color: #354c42;
@@ -481,6 +816,10 @@ a {
 
 @media (max-width: 767.98px) {
     .dashboard-intro {
+        border-radius: 1.1rem;
+    }
+
+    .doctor-welcome {
         border-radius: 1.1rem;
     }
 
